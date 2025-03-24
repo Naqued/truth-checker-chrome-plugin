@@ -1,0 +1,161 @@
+.fact-check-overlay {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  max-width: 350px;
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 16px;
+  border-radius: 8px;
+  z-index: 10000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  backdrop-filter: blur(5px);
+  transition: opacity 0.3s ease;
+}
+
+.fact-check-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.fact-check-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.fact-check-content {
+  margin-top: 5px;
+}
+
+.fact-check-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.fact-check-spinner {
+  width: 30px;
+  height: 30px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.fact-check-subtitle {
+  font-size: 12px;
+  opacity: 0.7;
+  margin-top: 5px;
+}
+
+.fact-check-result {
+  border-left: 4px solid transparent;
+  padding-left: 12px;
+}
+
+.confidence-high {
+  border-left-color: #00ff00;
+}
+
+.confidence-medium {
+  border-left-color: #ff9900;
+}
+
+.confidence-low {
+  border-left-color: #ff0000;
+}
+
+.fact-check-summary h3 {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.fact-check-summary p {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.fact-check-claims {
+  margin-top: 12px;
+  max-height: 150px;
+  overflow-y: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 8px;
+}
+
+.fact-check-claim {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 8px;
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+.fact-check-claim-icon {
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+.fact-check-true .fact-check-claim-icon {
+  color: #00ff00;
+}
+
+.fact-check-false .fact-check-claim-icon {
+  color: #ff0000;
+}
+
+.fact-check-claim-text {
+  flex: 1;
+}
+
+.fact-check-claim-confidence {
+  margin-left: 8px;
+  opacity: 0.7;
+  font-size: 11px;
+}
+
+.fact-check-error {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  background: rgba(255, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+.fact-check-error-icon {
+  margin-right: 8px;
+}
+
+/* For smaller screens, make overlay take more space */
+@media (max-width: 768px) {
+  .fact-check-overlay {
+    max-width: 85%;
+    bottom: 10px;
+    right: 10px;
+  }
+} 
